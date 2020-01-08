@@ -143,6 +143,7 @@ def main():
     min_accuracy = 0.0
     # print(summary(model))
     print(model)
+    print("no of epochs", epochs)
     correct, ave_loss = 0.0, 0.0
     for epoch in range(epochs):
         # training
