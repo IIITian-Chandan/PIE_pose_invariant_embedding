@@ -6,3 +6,4 @@ modelnet40
 ObjectPI
 ObjectPI/
 modelnet40/
+*.pyc
