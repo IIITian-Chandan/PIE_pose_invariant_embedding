@@ -16,6 +16,7 @@ import pickle
 from math import exp
 from torch.utils.data import Dataset, DataLoader
 from util import VGG_avg_piproxy, compute_acc, mvDataset, load_data
+from torchsummary import summary
 
 parser = argparse.ArgumentParser(description='PyTorch Training')
 parser.add_argument('-e', '--epochs', action='store', default=40, type=int, help='epochs (default: 40)')
@@ -140,12 +141,13 @@ def main():
 
     epochs = arg.epochs if arg.train_f else 0
     min_accuracy = 0.0
-
+    print(summary(model))
     correct, ave_loss = 0.0, 0.0
     for epoch in range(epochs):
         # training
         batch_idx = 0
         overall_acc = 0
+
         model.train()
         for batch_idx, (batch_x, batch_y) in enumerate(dataloader_trn):
             optimizer.zero_grad()
