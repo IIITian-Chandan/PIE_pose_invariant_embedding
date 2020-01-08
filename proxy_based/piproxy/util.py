@@ -39,6 +39,9 @@ class Multiview_obj:
 
         sampled_view_list = np.random.choice(view_list, V, replace=False)
         for f in sampled_view_list:
+            f = f.split("/")
+            f = "/home/ubuntu/filestore/chandan/PIE_pose_invariant_embedding/modelnet40/" + f[-2] + "/" + f[-3] + "/" + \
+                f[-1]
             img = Image.open(f)
             if self.transform is not None:
                 img = self.transform(img)

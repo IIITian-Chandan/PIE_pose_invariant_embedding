@@ -15,7 +15,6 @@ import torch.cuda as cuda
 import pickle
 from math import exp
 from torch.utils.data import Dataset, DataLoader
-
 from util import VGG_avg_piproxy, compute_acc, mvDataset, load_data
 
 parser = argparse.ArgumentParser(description='PyTorch Training')
