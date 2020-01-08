@@ -258,6 +258,8 @@ def main():
         print("shape_feature", _.shape)
         print("class_feature", class_feature.shape)
         batch_y = batch_y.view(batch_y.shape[0], 1).repeat(1, input_view).view(batch_y.shape[0] * input_view)
+        print("batch_x", batch_x.shape)
+        print("batch_y", batch_y.shape)
         y = batch_y.numpy()
         correct += compute_acc(image_feature, class_feature, y)
 
