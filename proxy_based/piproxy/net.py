@@ -165,6 +165,8 @@ def main():
             image_feature, shape_feature, class_feature = model(input)
             batch_y = batch_y.view(batch_y.shape[0], 1).repeat(1, input_view).view(batch_y.shape[0] * input_view)
             y = batch_y.numpy()
+            print("y", y.shape)
+            print(y)
 
             print("image_feature", image_feature.shape)
             print("shape_feature", shape_feature.shape)
