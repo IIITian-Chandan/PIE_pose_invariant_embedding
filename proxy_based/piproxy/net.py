@@ -162,10 +162,13 @@ def main():
             # for gpu mode
             # use cross entropy loss
             criterion_nll = nn.NLLLoss()
-
             image_feature, shape_feature, class_feature = model(input)
             batch_y = batch_y.view(batch_y.shape[0], 1).repeat(1, input_view).view(batch_y.shape[0] * input_view)
             y = batch_y.numpy()
+
+            print("image_feature", image_feature.shape)
+            print("shape_feature", shape_feature.shape)
+            print("class_feature", class_feature.shape)
 
             loss = None
             for v in range(image_feature.shape[0]):
@@ -251,6 +254,9 @@ def main():
     for batch_idx, (batch_x, batch_y) in enumerate(dataloader_test):
         input = batch_x.cuda()
         image_feature, _, class_feature = model(input)
+        print("image_feature", image_feature.shape)
+        print("shape_feature", _.shape)
+        print("class_feature", class_feature.shape)
         batch_y = batch_y.view(batch_y.shape[0], 1).repeat(1, input_view).view(batch_y.shape[0] * input_view)
         y = batch_y.numpy()
         correct += compute_acc(image_feature, class_feature, y)
