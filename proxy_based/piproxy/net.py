@@ -139,6 +139,9 @@ def main():
     print("Start Training")
     logger.info("Start Training")
 
+    print(arg.train_f)
+    print(epochs)
+
     epochs = arg.epochs if arg.train_f else 0
     min_accuracy = 0.0
     # print(summary(model))
