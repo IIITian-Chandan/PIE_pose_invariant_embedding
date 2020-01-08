@@ -176,6 +176,7 @@ def main():
                 shape_id = int(v / input_view)
 
                 for s in range(shape_feature.shape[0]):
+                    print("class_feature[y[v]]", class_feature[y[v]].shape)
 
                     neg_dist_v_s = -torch.sum((image_feature[v] - shape_feature[s]) ** 2)
                     neg_dist_s_cy = -torch.sum((shape_feature[s] - class_feature[y[v]]) ** 2)
