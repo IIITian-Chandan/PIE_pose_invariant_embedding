@@ -141,7 +141,8 @@ def main():
 
     epochs = arg.epochs if arg.train_f else 0
     min_accuracy = 0.0
-    print(summary(model))
+    # print(summary(model))
+    print(model)
     correct, ave_loss = 0.0, 0.0
     for epoch in range(epochs):
         # training
